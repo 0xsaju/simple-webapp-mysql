@@ -7,9 +7,9 @@ import os
 app = Flask(__name__)
 
 DB_Host = os.environ.get('DB_Host') or "localhost"
-DB_Database = os.environ.get('DB_Database') or "mysql"
+DB_Database = os.environ.get('DB_Database') or "webapp_mysql"
 DB_User = os.environ.get('DB_User') or "root"
-DB_Password = os.environ.get('DB_Password') or "paswrd"
+DB_Password = os.environ.get('DB_Password') or "AppDBPass"
 
 @app.route("/")
 def main():
