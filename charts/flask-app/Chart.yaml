@@ -1,4 +1,6 @@
 apiVersion: v2
 name: flask-app
-description: Flask App Helm Chart
+description: A simple Flask web app with MySQL backend
+type: application
 version: 0.1.0
+appVersion: "1.0"
