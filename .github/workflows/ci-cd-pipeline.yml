@@ -29,8 +29,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t your-docker-repository/flask-app:${{ github.sha }} .
-        docker push your-docker-repository/flask-app:${{ github.sha }}
+        docker build -t 0xsaju/flask-app:${{ github.sha }} .
+        docker push 0xsaju/flask-app:${{ github.sha }}
 
     - name: Deploy to Kubernetes with Helm
       run: |
