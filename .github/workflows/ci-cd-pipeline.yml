@@ -3,10 +3,10 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - main
+      - new-ci-cd
   pull_request:
     branches:
-      - main
+      - new-ci-cd
 
 jobs:
   build:
@@ -34,4 +34,4 @@ jobs:
 
     - name: Deploy to Kubernetes with Helm
       run: |
-        helm upgrade --install flask-app charts/flask-app --namespace default --set image.tag=${{ github.sha }}
+        helm upgrade --install flask-app charts/flask-app --namespace argocd --set image.tag=${{ github.sha }}
