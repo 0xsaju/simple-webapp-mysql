@@ -1,0 +1,18 @@
+replicaCount: 2
+
+image:
+  repository: your-dockerhub-user/flask-app
+  pullPolicy: IfNotPresent
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  hosts:
+    - host: flask-app.local
+      paths:
+        - path: /
+          pathType: Prefix
