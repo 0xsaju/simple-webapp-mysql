@@ -10,8 +10,15 @@ RUN python -m venv /venv && \
 
 COPY . .
 
-EXPOSE 5000
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY --from=builder /app /app
+COPY --from=builder /venv /venv
 
 ENV PATH="/venv/bin:$PATH"
+
+EXPOSE 5000
 
 CMD ["python", "app.py"]
