@@ -49,7 +49,7 @@ jobs:
 
     - name: Set GITHUB_TOKEN
       env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+        GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       run: |
         echo "GITHUB_TOKEN is set."
 
