@@ -11,7 +11,7 @@ spec:
   source:
     repoURL: 'https://github.com/0xsaju/simple-webapp-mysql.git'
     targetRevision: new-ci-cd
-    path: charts/flask-app
+    path: k3s
   syncPolicy:
     automated:
       prune: true
