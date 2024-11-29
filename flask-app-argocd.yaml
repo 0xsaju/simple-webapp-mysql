@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: flask-app
+    namespace: argocd
     server: https://kubernetes.default.svc
   source:
     repoURL: 'https://github.com/0xsaju/simple-webapp-mysql.git'

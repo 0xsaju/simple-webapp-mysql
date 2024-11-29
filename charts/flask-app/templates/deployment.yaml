@@ -16,6 +16,9 @@ spec:
     spec:
       containers:
         - name: flask-app
-          image: "0xsaju/flask-app:latest"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           ports:
             - containerPort: 5000
+          env:
+              - name: DB_Host
+                value: mysql-service

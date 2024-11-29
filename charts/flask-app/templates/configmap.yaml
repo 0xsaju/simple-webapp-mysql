@@ -1,0 +1,12 @@
+env:
+- name: DB_Host
+  value: mysql-service  # Use the MySQL service name
+- name: DB_Database
+  value: webapp_mysql
+- name: DB_User
+  value: root
+- name: DB_Password
+  valueFrom:
+    secretKeyRef:
+      name: mysql-secret
+      key: password
