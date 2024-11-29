@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
 spec:
   rules:
-  - host: 192.168.102.121
+  - host: flask-app.local
     http:
       paths:
       - path: /
