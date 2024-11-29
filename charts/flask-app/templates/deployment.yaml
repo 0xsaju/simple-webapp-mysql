@@ -24,9 +24,15 @@ spec:
             - name: DB_Host
               value: mysql-service
             - name: DB_Database
-              value: webapp_mysql
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: database
             - name: DB_User
-              value: root
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: user
             - name: DB_Password
               valueFrom:
                 secretKeyRef:
