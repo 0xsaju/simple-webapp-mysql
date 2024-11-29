@@ -47,6 +47,12 @@ jobs:
     - name: Install Helm
       uses: azure/setup-helm@v3
 
+    - name: Set GITHUB_TOKEN
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+      run: |
+        echo "GITHUB_TOKEN is set."
+
     - name: Create namespace if not exists
       run: |
         kubectl create namespace argocd || true
