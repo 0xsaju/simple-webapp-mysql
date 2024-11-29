@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flask-app
+  namespace: argocd
   labels:
     app: flask-app
 spec:
@@ -20,5 +21,14 @@ spec:
           ports:
             - containerPort: 5000
           env:
-              - name: DB_Host
-                value: mysql-service
+            - name: DB_Host
+              value: mysql-service
+            - name: DB_Database
+              value: webapp_mysql
+            - name: DB_User
+              value: root
+            - name: DB_Password
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
